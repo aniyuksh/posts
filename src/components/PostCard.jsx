@@ -6,7 +6,7 @@ import {BiComment} from "react-icons/bi"
 import {BsShare} from "react-icons/bs"
 import { Context } from '../context/DataContext'
 import { Link } from 'react-router-dom'
-
+import moment from "moment"
 
 const PostCard = ({post}) => {
 
@@ -57,6 +57,7 @@ const PostCard = ({post}) => {
         <div className='flex items-center gap-4'>
           <img src={post.picUrl} alt="avtar" className='h-[30px]'/>
           <p>Posted by @{post.username}</p>
+          <p>{moment(Date.parse(post.createdAt)).fromNow()}</p>
           {/* <p>{post.createdAt}</p> */}
         </div>
         <div className='pb-2'>
